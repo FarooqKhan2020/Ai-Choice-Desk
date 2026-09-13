@@ -3,6 +3,106 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Brand & Core Colors (exact Figma design tokens) */
+  --navy-900: #061428;
+  --navy-800: #0a1a35;
+  --navy-700: #0e2542;
+  --mint-400: #51dfcc;
+  --teal-600: #00cfc1;
+  --mint-200: #b1f5e6;
+
+  --brand-primary: #00cfc1;
+  --brand-primary-hover: #00afa3;
+  --brand-primary-light: #eef9fb;
+
+  --accent-secondary: #006de2;
+  --accent-secondary-hover: #0057b8;
+  --accent-secondary-active: #00458f;
+  --accent-secondary-light: #eaf2fe;
+
+  /* Backgrounds & Surfaces */
+  --surface: #ffffff;
+  --surface-nav: #f5f9fc;
+  --surface-alt: #f8fafd;
+  --tint-ice: #eef9fb;
+  --pale-blue: #c9e3ff;
+  --bg-page: #ffffff;
+  --bg-section: #f8fafd;
+  --bg-dark: #000a1c;
+  --surface-elevated: #fcfefe;
+  --state-hover: #f1f6fa;
+  --cards-dark-fill: #05375a;
+
+  /* Text Colors */
+  --text-primary: #001229;
+  --text-body: #374151;
+  --text-secondary: #536676;
+  --text-muted: #858c99;
+  --text-disabled: #999ea6;
+  --text-on-primary: #000716;
+  --text-on-dark: #f8fafc;
+  --text-on-dark-muted: #a9bacc;
+  --link-accent: #00cfc1;
+
+  /* Icons */
+  --icon-primary: #001229;
+  --icon-muted: #858c99;
+
+  /* Buttons */
+  --btn-primary-bg: #00cfc1;
+  --btn-primary-text: #061529;
+  --btn-primary-hover: #51dfcc;
+  --btn-dark-bg: #061529;
+  --btn-dark-text: #ffffff;
+  --btn-outline-border: #cbd9e6;
+  --btn-outline-text: #061529;
+  --chip-bg: #eef9fb;
+  --chip-border: #d4e6ef;
+  --btn-disabled-bg: #e3eaf1;
+  --btn-disabled-text: #9aa8b6;
+
+  /* Inputs & Form Fields */
+  --input-bg-light: #ffffff;
+  --input-bg-dark: #0e2542;
+  --input-border: #dce6ef;
+  --input-border-focus: #00cfc1;
+  --placeholder-text: #8a9aab;
+  --input-label: #061529;
+  --input-text: #061529;
+
+  /* Cards, Borders & Dividers */
+  --card-bg: #ffffff;
+  --card-border: #dce2e9;
+  --card-hover-border: #51dfcc;
+  --card-shadow: #0a1a35;
+  --divider: #e6edf4;
+  --divider-dark: #17293f;
+  --border-default: #dce2e9;
+
+  /* Status / Feedback Colors */
+  --success: #22c55e;
+  --success-soft-bg: #b1f5e6;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --rating-star: #ffb020;
+
+  /* Tool brand colors */
+  --brand-ahrefs: #3a57fc;
+  --brand-ahrefs-fill: #e2e6fc;
+  --brand-freshdesk: #00a93f;
+  --brand-freshdesk-fill: #e7fcef;
+  --brand-hubspot: #ff5c35;
+  --brand-hubspot-fill: #fff1ee;
+  --brand-elevenlabs: #0c1936;
+  --brand-elevenlabs-fill: #f0f0f0;
+  --brand-browseai: #7f56da;
+  --brand-browseai-fill: #f2edff;
+
+  /* Shape */
+  --radius-card: 12px;
+  --radius-button: 10px;
+  --radius-pill: 999px;
 }
 
 @theme inline {
@@ -10,6 +110,104 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Brand & Core Colors */
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-mint-400: var(--mint-400);
+  --color-teal-600: var(--teal-600);
+  --color-mint-200: var(--mint-200);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-hover: var(--brand-primary-hover);
+  --color-brand-primary-light: var(--brand-primary-light);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-secondary-hover: var(--accent-secondary-hover);
+  --color-accent-secondary-active: var(--accent-secondary-active);
+  --color-accent-secondary-light: var(--accent-secondary-light);
+
+  /* Backgrounds & Surfaces */
+  --color-surface: var(--surface);
+  --color-surface-nav: var(--surface-nav);
+  --color-surface-alt: var(--surface-alt);
+  --color-tint-ice: var(--tint-ice);
+  --color-pale-blue: var(--pale-blue);
+  --color-bg-page: var(--bg-page);
+  --color-bg-section: var(--bg-section);
+  --color-bg-dark: var(--bg-dark);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-state-hover: var(--state-hover);
+  --color-cards-dark-fill: var(--cards-dark-fill);
+
+  /* Text Colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-body: var(--text-body);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-disabled: var(--text-disabled);
+  --color-text-on-primary: var(--text-on-primary);
+  --color-text-on-dark: var(--text-on-dark);
+  --color-text-on-dark-muted: var(--text-on-dark-muted);
+  --color-link-accent: var(--link-accent);
+
+  /* Icons */
+  --color-icon-primary: var(--icon-primary);
+  --color-icon-muted: var(--icon-muted);
+
+  /* Tool brand colors */
+  --color-brand-ahrefs: var(--brand-ahrefs);
+  --color-brand-ahrefs-fill: var(--brand-ahrefs-fill);
+  --color-brand-freshdesk: var(--brand-freshdesk);
+  --color-brand-freshdesk-fill: var(--brand-freshdesk-fill);
+  --color-brand-hubspot: var(--brand-hubspot);
+  --color-brand-hubspot-fill: var(--brand-hubspot-fill);
+  --color-brand-elevenlabs: var(--brand-elevenlabs);
+  --color-brand-elevenlabs-fill: var(--brand-elevenlabs-fill);
+  --color-brand-browseai: var(--brand-browseai);
+  --color-brand-browseai-fill: var(--brand-browseai-fill);
+
+  /* Buttons */
+  --color-btn-primary-bg: var(--btn-primary-bg);
+  --color-btn-primary-text: var(--btn-primary-text);
+  --color-btn-primary-hover: var(--btn-primary-hover);
+  --color-btn-dark-bg: var(--btn-dark-bg);
+  --color-btn-dark-text: var(--btn-dark-text);
+  --color-btn-outline-border: var(--btn-outline-border);
+  --color-btn-outline-text: var(--btn-outline-text);
+  --color-chip-bg: var(--chip-bg);
+  --color-chip-border: var(--chip-border);
+  --color-btn-disabled-bg: var(--btn-disabled-bg);
+  --color-btn-disabled-text: var(--btn-disabled-text);
+
+  /* Inputs & Form Fields */
+  --color-input-bg-light: var(--input-bg-light);
+  --color-input-bg-dark: var(--input-bg-dark);
+  --color-input-border: var(--input-border);
+  --color-input-border-focus: var(--input-border-focus);
+  --color-placeholder-text: var(--placeholder-text);
+  --color-input-label: var(--input-label);
+  --color-input-text: var(--input-text);
+
+  /* Cards, Borders & Dividers */
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-card-hover-border: var(--card-hover-border);
+  --color-card-shadow: var(--card-shadow);
+  --color-divider: var(--divider);
+  --color-divider-dark: var(--divider-dark);
+  --color-border-default: var(--border-default);
+
+  /* Status / Feedback Colors */
+  --color-success: var(--success);
+  --color-success-soft-bg: var(--success-soft-bg);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-rating-star: var(--rating-star);
+
+  /* Shape */
+  --radius-card: var(--radius-card);
+  --radius-button: var(--radius-button);
+  --radius-pill: var(--radius-pill);
 }
 
 @media (prefers-color-scheme: dark) {
