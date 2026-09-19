@@ -1,99 +1,79 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
-export default function FindRightFit() {
-  const useCases = [
-    {
-      tag: 'For small businesses',
-      title: 'For small businesses',
-      description: 'Compare the capabilities and cost-to-volume fit ideal for smaller businesses with lower call rates.',
-      icon: '💼',
-      link: '/software/ai-receptionist/small-business',
-    },
-    {
-      tag: 'For agencies',
-      title: 'For agencies',
-      description: 'Compare the capabilities and cost-fit options ideal for agencies with higher call volumes.',
-      icon: '🏢',
-      link: '/software/ai-receptionist/agencies',
-    },
-    {
-      tag: 'For professional services',
-      title: 'For professional services',
-      description: 'Compare the capabilities and cost-fit ideal for professional-service firms.',
-      icon: '⚖️',
-      link: '/software/ai-receptionist/professional',
-    },
-    {
-      tag: 'For high call volume',
-      title: 'For high call volume',
-      description: 'Compare the capabilities and cost-to-volume fit ideal for businesses with high call rates.',
-      icon: '📞',
-      link: '/software/ai-receptionist/high-volume',
-    },
-    {
-      tag: 'For appointment-heavy businesses',
-      title: 'For appointment-heavy businesses',
-      description: 'Compare the capabilities ideal for appointment-heavy businesses with complex scheduling.',
-      icon: '📅',
-      link: '/software/ai-receptionist/appointment',
-    },
-  ];
+const useCases = [
+  {
+    title: 'For small businesses',
+    link: '/software/ai-receptionist/small-business',
+  },
+  {
+    title: 'For agencies',
+    link: '/software/ai-receptionist/agencies',
+  },
+  {
+    title: 'For professional services',
+    link: '/software/ai-receptionist/professional',
+  },
+  {
+    title: 'For high call volume',
+    link: '/software/ai-receptionist/high-volume',
+  },
+  {
+    title: 'For appointment-heavy businesses',
+    link: '/software/ai-receptionist/appointment',
+  },
+];
 
+export default function FindRightFit() {
   return (
-    <section className="bg-white py-20">
-      <div className="container mx-auto max-w-[1200px] px-6 lg:px-8">
+    <section className="bg-surface-alt py-15">
+      <div className="mx-auto max-w-[1320px] px-6 lg:px-15">
         {/* Header */}
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold text-[#0B1220] mb-4">
-            Find the right fit
-          </h2>
-          <p className="text-gray-600 text-lg">
-            Which AI receptionist is right for you?
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="font-(family-name:--font-sora) text-[40px] font-extrabold leading-[1.15] text-text-primary lg:text-[52px]">
+              Find the right fit
+            </h2>
+            <p className="pt-2 font-(family-name:--font-manrope) text-[16px] text-text-primary">
+              Which AI receptionist is right for you?
+            </p>
+          </div>
+          <p className="font-(family-name:--font-manrope) text-[14px] text-text-secondary">
+            Start with your operating model—not a generic ranking.
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Cards */}
+        <div className="grid gap-2.5 pt-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
           {useCases.map((useCase, index) => (
             <Link
-              key={index}
+              key={useCase.title}
               href={useCase.link}
-              className="group p-8 border-2 border-gray-200 rounded-xl hover:border-cyan-500 hover:shadow-lg transition-all duration-300"
+              className="group flex min-h-[237px] flex-col rounded-2xl border border-border-default bg-white p-5 transition-shadow hover:shadow-md"
             >
-              {/* Icon */}
-              <div className="text-4xl mb-4">{useCase.icon}</div>
-
-              {/* Tag */}
-              <div className="inline-block px-3 py-1 bg-cyan-50 text-cyan-700 text-xs font-semibold rounded-full mb-4">
-                {useCase.tag}
-              </div>
-
-              {/* Title */}
-              <h3 className="text-xl font-bold text-[#0B1220] mb-3">
+              <span className="font-(family-name:--font-manrope) text-[12px] font-semibold text-brand-primary">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <h3 className="pt-7 font-(family-name:--font-manrope) text-[17px] font-bold leading-6 text-text-primary">
                 {useCase.title}
               </h3>
-
-              {/* Description */}
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                {useCase.description}
+              <p className="pt-3 font-(family-name:--font-manrope) text-[12px] leading-5 text-text-secondary">
+                Compare the capabilities and buying questions most relevant to
+                this workflow.
               </p>
-
-              {/* Arrow */}
-              <div className="flex items-center text-cyan-600 font-semibold text-sm group-hover:gap-2 transition-all">
+              <span className="mt-auto flex items-center gap-1.5 pt-4 font-(family-name:--font-manrope) text-[13px] font-semibold text-text-primary">
                 Explore options
-                <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </div>
+                <Image
+                  src="/AI receptionist/icons/black arrow.svg"
+                  alt=""
+                  width={14}
+                  height={14}
+                  aria-hidden="true"
+                  className="transition-transform group-hover:translate-x-0.5"
+                />
+              </span>
             </Link>
           ))}
-        </div>
-
-        {/* Bottom Text */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-600">
-            Start with your operating model—not a payment runway or aesthetic pick.
-          </p>
         </div>
       </div>
     </section>

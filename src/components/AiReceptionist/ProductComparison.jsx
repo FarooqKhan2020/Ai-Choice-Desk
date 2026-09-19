@@ -7,8 +7,8 @@ import Link from 'next/link';
 const products = [
   {
     slug: 'gohighlevel',
-    name: 'GoHighLevel',
-    logo: '/images/GoHighLevel.png',
+    name: 'GoHighLeve',
+    logo: '/AI receptionist/images/Go high level.png',
     description: 'Agency CRM with built-in voice and SMS automation.',
     bestFor: 'Agencies',
     price: 'From $97/mo',
@@ -19,7 +19,7 @@ const products = [
   {
     slug: 'goodcall',
     name: 'Goodcall',
-    logo: '/images/Goodcall.png',
+    logo: '/AI receptionist/images/Good call.png',
     description: 'AI phone agent aimed at local service businesses.',
     bestFor: 'Local services',
     price: 'From $59/mo',
@@ -30,7 +30,7 @@ const products = [
   {
     slug: 'smith-ai',
     name: 'Smith.ai',
-    logo: '/images/Smith.ai.png',
+    logo: '/AI receptionist/images/Smith.png',
     description: 'AI and human reception for complex or high-value calls.',
     bestFor: 'Professional services',
     price: '$97.50/mo',
@@ -41,7 +41,7 @@ const products = [
   {
     slug: 'synthflow-ai',
     name: 'Synthflow AI',
-    logo: '/images/Synthflow%20AI.png',
+    logo: '/AI receptionist/images/synth flow.png',
     description: 'No-code voice agents for inbound and outbound calls.',
     bestFor: 'Custom workflows',
     price: 'From $29/mo',

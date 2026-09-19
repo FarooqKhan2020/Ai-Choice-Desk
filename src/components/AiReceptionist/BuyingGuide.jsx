@@ -1,97 +1,92 @@
+import Image from 'next/image';
+
+const description =
+  'Use real workflows and likely call volumes, then confirm what happens at the edge cases.';
+
+const guides = [
+  { title: 'Understand the pricing model', description },
+  { title: 'Test the AI with difficult calls', description },
+  { title: 'Check human handoff', description },
+  { title: 'Review integrations', description },
+  { title: 'Test appointment handling', description },
+];
+
+const expectedFeatures = [
+  '24/7 call answering',
+  'Spam screening',
+  'Appointment booking',
+  'Call transcripts',
+  'Lead qualification',
+  'Analytics',
+  'Call transfer',
+  'Human handoff',
+];
+
 export default function BuyingGuide() {
-  const guides = [
-    {
-      icon: '💰',
-      title: 'Understand the pricing model',
-      description: 'Per-minute or monthly plans. Then confirm what happens at the edge cases.',
-    },
-    {
-      icon: '📱',
-      title: 'Test the AI with difficult calls',
-      description: 'Run real call scenarios with accent variation, technical jargon, and edge-case requests.',
-    },
-    {
-      icon: '👤',
-      title: 'Check human handoff',
-      description: 'Test when and how callers can switch to live humans if the AI cannot help.',
-    },
-    {
-      icon: '⚙️',
-      title: 'Review integrations',
-      description: 'See what calendar and ticketing tools you can connect. Then confirm what is edge-cases.',
-    },
-    {
-      icon: '🔄',
-      title: 'Test appointment handling',
-      description: 'See if the platform can book, reschedule, and confirm. Then confirm what happens at edge cases.',
-    },
-  ];
-
-  const expectedFeatures = [
-    { icon: '📞', title: '24/7 call answering' },
-    { icon: '🖥️', title: 'Spam screening' },
-    { icon: '📅', title: 'Appointment booking' },
-    { icon: '💬', title: 'Call transcripts' },
-    { icon: '🔗', title: 'Lead qualification' },
-    { icon: '📊', title: 'Analytics' },
-    { icon: '📱', title: 'Call transfer' },
-    { icon: '👥', title: 'Human/handoff' },
-  ];
-
   return (
-    <section className="bg-gray-50 py-20">
-      <div className="container mx-auto max-w-[1200px] px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left: Buying Guide */}
-          <div>
-            <h2 className="text-3xl font-bold text-[#0B1220] mb-4">
-              Buying guide
-            </h2>
-            <p className="text-gray-600 mb-8">
-              What to check before you buy
-            </p>
+    <section className="bg-white py-15">
+      <div className="mx-auto grid max-w-[1320px] gap-12 px-6 lg:grid-cols-2 lg:px-15 xl:grid-cols-[576px_660px] xl:justify-between">
+        {/* Left: Buying guide */}
+        <div>
+          <h2 className="font-(family-name:--font-sora) text-[24px] font-bold leading-8 text-text-primary">
+            Buying guide
+          </h2>
+          <p className="pt-2 font-(family-name:--font-manrope) text-[16px] text-text-primary">
+            What to check before you buy
+          </p>
 
-            <div className="space-y-6">
-              {guides.map((guide, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-cyan-50 rounded-lg flex items-center justify-center text-xl">
-                    {guide.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#0B1220] mb-1">
-                      {guide.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      {guide.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: Expected Features */}
-          <div>
-            <h2 className="text-3xl font-bold text-[#0B1220] mb-4">
-              Expected as standard
-            </h2>
-            <p className="text-gray-600 mb-8">
-              The baseline feature set
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {expectedFeatures.map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-cyan-50 rounded-lg flex items-center justify-center text-lg">
-                    {feature.icon}
-                  </div>
-                  <span className="text-gray-700 font-medium">
-                    {feature.title}
+          <ol className="pt-10">
+            {guides.map((guide, index) => (
+              <li
+                key={guide.title}
+                className="border-b border-border-default py-5 last:border-b-0"
+              >
+                <div className="flex items-baseline gap-3">
+                  <span className="font-(family-name:--font-manrope) text-[15px] font-bold text-brand-primary">
+                    {String(index + 1).padStart(2, '0')}
                   </span>
+                  <h3 className="font-(family-name:--font-manrope) text-[15px] font-semibold text-text-primary">
+                    {guide.title}
+                  </h3>
                 </div>
-              ))}
-            </div>
-          </div>
+                <p className="pl-8 pt-2 font-(family-name:--font-manrope) text-[13px] leading-5 text-text-secondary">
+                  {guide.description}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        {/* Right: Expected as standard */}
+        <div>
+          <h2 className="font-(family-name:--font-sora) text-[24px] font-bold leading-8 text-text-primary">
+            Expected as standard
+          </h2>
+          <p className="pt-2 font-(family-name:--font-manrope) text-[16px] text-text-primary">
+            The baseline feature set
+          </p>
+
+          <ul className="grid gap-2.5 pt-10 sm:grid-cols-2">
+            {expectedFeatures.map((feature) => (
+              <li
+                key={feature}
+                className="flex h-20 items-center gap-3 rounded-lg border border-border-default bg-[#f5f8fb] px-4"
+              >
+                <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-white">
+                  <Image
+                    src="/AI receptionist/icons/tick.svg"
+                    alt=""
+                    width={14}
+                    height={14}
+                    aria-hidden="true"
+                  />
+                </span>
+                <span className="font-(family-name:--font-manrope) text-[15px] font-semibold text-text-primary">
+                  {feature}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
