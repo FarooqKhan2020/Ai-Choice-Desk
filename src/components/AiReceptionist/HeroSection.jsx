@@ -80,7 +80,7 @@ export default function HeroSection() {
             {/* Image with badge */}
             <div className="relative h-[250px]">
               <Image
-                src="/images/AiReceptH.png"
+                src="/images/AiReceptH.jpeg"
                 alt="Team reviewing AI receptionist software"
                 fill
                 className="object-cover"
