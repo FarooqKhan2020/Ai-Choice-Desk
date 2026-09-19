@@ -5,7 +5,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const navLinks = [
-  { name: 'Software', href: '/software', hasDropdown: true },
+  {
+    name: 'Software',
+    hasDropdown: true,
+    dropdownItems: [
+      { name: 'AI Receptionist', href: '/software/ai-receptionist' },
+      { name: 'AI Chatbot', href: '/software/ai-chatbot' },
+      { name: 'AI Assistant', href: '/software/ai-assistant' },
+      { name: 'AI Analytics', href: '/software/ai-analytics' },
+    ]
+  },
   { name: 'Compare', href: '/compare' },
   { name: 'Best Of', href: '/best-of' },
   { name: 'Research', href: '/research' },
@@ -15,8 +24,13 @@ const navLinks = [
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   const toggleMenu = () => setIsMenuOpen((open) => !open);
+
+  const toggleDropdown = (name) => {
+    setOpenDropdown(openDropdown === name ? null : name);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b-[0.8px] border-[rgba(11,18,32,0.06)] bg-surface-nav/95 backdrop-blur-[14px]">
@@ -41,29 +55,60 @@ function Header() {
           {/* Desktop Navigation */}
           <ul className="hidden items-center gap-8 lg:flex">
             {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  className="flex items-center gap-[6px] rounded-lg px-2 py-[6px] font-[family-name:var(--font-inter)] text-[14px] font-semibold text-text-primary transition-colors hover:text-accent-secondary"
-                >
-                  {link.name}
-                  {link.hasDropdown && (
-                    <svg
-                      className="h-3.5 w-3.5"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+              <li key={link.name} className="relative">
+                {link.hasDropdown ? (
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setOpenDropdown(link.name)}
+                    onMouseLeave={() => setOpenDropdown(null)}
+                  >
+                    <button
+                      onClick={() => toggleDropdown(link.name)}
+                      className="flex items-center gap-[6px] rounded-lg px-2 py-[6px] font-[family-name:var(--font-inter)] text-[14px] font-semibold text-text-primary transition-colors hover:text-accent-secondary"
                     >
-                      <path
-                        d="M3.5 5.25L7 8.75L10.5 5.25"
-                        stroke="currentColor"
-                        strokeWidth="1.16667"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  )}
-                </Link>
+                      {link.name}
+                      <svg
+                        className={`h-3.5 w-3.5 transition-transform ${openDropdown === link.name ? 'rotate-180' : ''}`}
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.5 5.25L7 8.75L10.5 5.25"
+                          stroke="currentColor"
+                          strokeWidth="1.16667"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    {openDropdown === link.name && (
+                      <div className="absolute left-0 top-full pt-2">
+                        <div className="w-56 rounded-lg border border-[rgba(11,18,32,0.06)] bg-white shadow-lg">
+                          <ul className="py-2">
+                            {link.dropdownItems.map((item) => (
+                              <li key={item.name}>
+                                <Link
+                                  href={item.href}
+                                  className="block px-4 py-2.5 font-[family-name:var(--font-inter)] text-[14px] font-medium text-text-primary transition-colors hover:bg-gray-50 hover:text-accent-secondary"
+                                >
+                                  {item.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="flex items-center gap-[6px] rounded-lg px-2 py-[6px] font-[family-name:var(--font-inter)] text-[14px] font-semibold text-text-primary transition-colors hover:text-accent-secondary"
+                  >
+                    {link.name}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -115,13 +160,53 @@ function Header() {
             <ul className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="block font-[family-name:var(--font-inter)] text-[14px] font-semibold text-text-primary"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
+                  {link.hasDropdown ? (
+                    <div>
+                      <button
+                        onClick={() => toggleDropdown(link.name)}
+                        className="flex w-full items-center justify-between font-[family-name:var(--font-inter)] text-[14px] font-semibold text-text-primary"
+                      >
+                        {link.name}
+                        <svg
+                          className={`h-3.5 w-3.5 transition-transform ${openDropdown === link.name ? 'rotate-180' : ''}`}
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.5 5.25L7 8.75L10.5 5.25"
+                            stroke="currentColor"
+                            strokeWidth="1.16667"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      {openDropdown === link.name && (
+                        <ul className="mt-2 ml-4 flex flex-col gap-2">
+                          {link.dropdownItems.map((item) => (
+                            <li key={item.name}>
+                              <Link
+                                href={item.href}
+                                className="block font-[family-name:var(--font-inter)] text-[13px] font-medium text-text-muted hover:text-accent-secondary"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                {item.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="block font-[family-name:var(--font-inter)] text-[14px] font-semibold text-text-primary"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
               <li>

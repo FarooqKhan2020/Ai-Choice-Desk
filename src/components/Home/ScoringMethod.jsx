@@ -22,7 +22,7 @@ const steps = [
   },
   {
     number: '04',
-    title: 'Re-test on a schedule.',
+    title: 'Re-test on a schedule',
     description:
       'Pricing every 60 days, scores every 90. The date on the page is the date we last looked.',
   },
