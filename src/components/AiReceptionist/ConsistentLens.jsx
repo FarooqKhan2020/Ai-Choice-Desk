@@ -67,13 +67,13 @@ export default function ConsistentLens() {
         />
       </svg>
 
-      <div className="relative mx-auto grid max-w-[1320px] items-start gap-10 px-6 lg:grid-cols-2 lg:px-15 xl:grid-cols-[1fr_760px]">
+      <div className="relative mx-auto grid max-w-[1440px] items-start gap-10 px-6 lg:grid-cols-2 lg:px-15 xl:grid-cols-[minmax(0,1fr)_minmax(0,760px)]">
         {/* Left content */}
         <div className="max-w-[480px] pt-1">
           <p className="font-(family-name:--font-manrope) text-[15px] text-brand-primary">
             How we evaluate
           </p>
-          <h2 className="pt-6 font-(family-name:--font-sora) text-[40px] font-extrabold leading-[1.15] text-text-on-dark lg:text-[52px]">
+          <h2 className="pt-6 font-(family-name:--font-sora) text-[36px] font-extrabold leading-[1.15] text-text-on-dark xl:text-[40px] min-[1400px]:text-[52px]">
             A consistent lens
             <br className="hidden lg:block" /> for every product.
           </h2>

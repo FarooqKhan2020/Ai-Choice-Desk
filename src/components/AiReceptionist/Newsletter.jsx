@@ -29,7 +29,7 @@ export default function Newsletter() {
         ))}
       </div>
 
-      <div className="relative mx-auto flex max-w-[1320px] flex-col gap-8 px-6 lg:flex-row lg:items-center lg:justify-between lg:px-15">
+      <div className="relative mx-auto flex max-w-[1440px] flex-col gap-8 px-6 lg:flex-row lg:items-center lg:justify-between lg:px-15">
         <div>
           <p className="font-(family-name:--font-manrope) text-[11px] font-bold uppercase text-navy-900">
             The Choice Desk Briefing

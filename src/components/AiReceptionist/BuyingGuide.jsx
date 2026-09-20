@@ -25,7 +25,7 @@ const expectedFeatures = [
 export default function BuyingGuide() {
   return (
     <section className="bg-white py-15">
-      <div className="mx-auto grid max-w-[1320px] gap-12 px-6 lg:grid-cols-2 lg:px-15 xl:grid-cols-[576px_660px] xl:justify-between">
+      <div className="mx-auto grid max-w-[1440px] gap-12 px-6 lg:grid-cols-2 lg:px-15 xl:grid-cols-[minmax(0,576fr)_minmax(0,660fr)] xl:gap-[84px]">
         {/* Left: Buying guide */}
         <div>
           <h2 className="font-(family-name:--font-sora) text-[24px] font-bold leading-8 text-text-primary">

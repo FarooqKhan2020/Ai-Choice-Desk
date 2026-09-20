@@ -27,7 +27,7 @@ const useCases = [
 export default function FindRightFit() {
   return (
     <section className="bg-surface-alt py-15">
-      <div className="mx-auto max-w-[1320px] px-6 lg:px-15">
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-15">
         {/* Header */}
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>

@@ -48,7 +48,7 @@ export default function RelatedReading() {
 
   return (
     <section className="bg-[#f5f8fb] pb-15 pt-14">
-      <div className="mx-auto grid max-w-[1320px] gap-12 px-6 lg:grid-cols-2 lg:px-15 xl:grid-cols-[662px_628px] xl:justify-between">
+      <div className="mx-auto grid max-w-[1440px] gap-10 px-6 lg:grid-cols-2 lg:px-15 xl:grid-cols-[minmax(0,662fr)_minmax(0,628fr)] xl:gap-[30px]">
         {/* Left: Common questions */}
         <div className="lg:pt-12">
           <h2 className="font-(family-name:--font-sora) text-[24px] font-bold leading-8 text-text-primary">
@@ -114,7 +114,7 @@ export default function RelatedReading() {
               <Link
                 key={article.title}
                 href={article.link}
-                className="group flex h-32 flex-col justify-between rounded-xl border border-border-default bg-white p-5 transition-shadow hover:shadow-md"
+                className="group flex min-h-32 flex-col justify-between gap-4 rounded-xl border border-border-default bg-white p-5 transition-shadow hover:shadow-md"
               >
                 <div>
                   <p className="font-(family-name:--font-manrope) text-[10px] font-semibold uppercase text-brand-primary">
