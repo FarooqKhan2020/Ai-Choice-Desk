@@ -68,7 +68,7 @@ function Hero() {
         {/* Heading */}
         <h1 className="max-w-[896px] pt-5 font-[family-name:var(--font-sora)] text-4xl font-bold leading-[1.05] text-[#f1f8fb] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[84.8px]">
           Every AI tool promises results.{' '}
-          <span className="text-teal-600">We verify them.</span>
+          <span className="text-teal-600">We verify them.123</span>
         </h1>
 
         {/* Description */}
